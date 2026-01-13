@@ -1,0 +1,13 @@
+{
+	"git.autofetch": true,
+	"git.autofetchPeriod": 180,
+	"git.confirmSync": false,
+	"git.enableSmartCommit": true,
+	"git.postCommitCommand": "sync",
+	"git.suggestSmartCommit": true,
+	"githubPullRequests.createOnPublishBranch": "always",
+	"githubPullRequests.pullBranch": "never",
+	"githubPullRequests.remotes": [
+		"origin"
+	]
+}
