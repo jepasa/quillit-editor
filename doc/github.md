@@ -24,7 +24,9 @@ No GitHub:
 1. `Settings` → `Rules` → `Rulesets`
 2. Crie um ruleset para `main` (ex.: `Protect main (PR + reviews + CI)`) e marque `Enforcement status: Active`.
 3. **Bypass list**: deixe vazio (mais restrito).
-4. **Target branches**: `main`
+4. **Branch targeting criteria**: `Default branch` (recomendado)
+
+> Importante: evite `All branches`, senão você pode bloquear push em branches de feature/chore (e até travar a atualização de PRs).
 
 ### Branch rules sugeridas
 
@@ -52,9 +54,18 @@ No GitHub:
 ### Status checks
 
 - Require status checks to pass: ON
-- Selecione o check: `sanity / js-sanity`
+- Selecione o check (recomendado): `sanity / js-sanity (pull_request)`
 - Require branches to be up to date before merging: ON
 - Do not require status checks on creation: ON
+
+> Dica: evite selecionar checks de `push` aqui. Se você já exige PR antes do merge, o check do evento `pull_request` é o que realmente bloqueia o merge na `main`.
+
+### Se o GitHub mostrar "Expected — Waiting for status"
+
+Isso geralmente significa que você selecionou algum status check que **não está sendo reportado** (por exemplo, um check antigo ou o check do evento errado).
+
+- Deixe pelo menos 1 check obrigatório, mas mantenha **somente** o `sanity / js-sanity (pull_request)` como requerido.
+- Remova qualquer check genérico `sanity` ou variantes duplicadas.
 
 > Observação: se o GitHub não listar o check, rode o workflow ao menos 1 vez em `Actions` → `sanity` → `Run workflow`.
 
