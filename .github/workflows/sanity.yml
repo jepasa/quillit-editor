@@ -25,7 +25,9 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if grep -R --line-number --fixed-strings "<<<<<<<" .; then
+          # Use git grep (tracked files) and exclude this workflow to avoid self-matching.
+          if git grep -n --fixed-strings "<<<<<<<" -- . \
+            ':!/.github/workflows/sanity.yml'; then
             echo "Found merge conflict markers (<<<<<<<)."
             exit 1
           fi
