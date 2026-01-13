@@ -219,6 +219,18 @@ document.querySelector('.quillit-editor').setAttribute('data-quillit-theme', 'da
 
 Arquivo de teste completo em `./demo/quillit-demo.html`.
 
+## 🧩 VS Code + GitHub (recomendado)
+
+Este repositório inclui recomendações do VS Code em `./.vscode/`.
+
+1. Abra o projeto no VS Code.
+2. Instale a extensão **GitHub Pull Requests and Issues** (ID: `github.vscode-pull-request-github`).
+3. Autentique: `Ctrl+Shift+P` → **GitHub: Sign in**.
+4. Fluxo de contribuição sugerido:
+  - Crie um branch: `git checkout -b feat/minha-alteracao`
+  - Commit + push: `git push -u origin feat/minha-alteracao`
+  - Abra um PR pelo VS Code (aba GitHub) ou pelo site.
+
 ## 📄 Licença
 
 Este componente usa licença MIT (permite uso, alteração e derivação, desde que mantenha o aviso e a licença). Veja: [LICENSE](LICENSE)
