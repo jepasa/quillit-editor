@@ -231,6 +231,8 @@ Este repositório inclui recomendações do VS Code em `./.vscode/`.
   - Commit + push: `git push -u origin feat/minha-alteracao`
   - Abra um PR pelo VS Code (aba GitHub) ou pelo site.
 
+Para configuração de manutenção no GitHub (ruleset/branch protection), veja `doc/github.md`.
+
 ## 📄 Licença
 
 Este componente usa licença MIT (permite uso, alteração e derivação, desde que mantenha o aviso e a licença). Veja: [LICENSE](LICENSE)
