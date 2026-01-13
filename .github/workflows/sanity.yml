@@ -3,12 +3,13 @@ name: sanity
 on:
   push:
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  sanity:
+  js-sanity:
     runs-on: ubuntu-latest
 
     steps:
