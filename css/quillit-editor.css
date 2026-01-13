@@ -1,0 +1,844 @@
+/* SPDX-License-Identifier: MIT */
+/**
+ * @file css/quillit-editor.css
+ * @fileoverview Estilos do Quillit Editor (UI, layout, componentes, estados e tema claro/escuro) sem dependências externas.
+ * @author Jeferson Paidilha (https://jepasa.com)
+ * @license MIT
+ * @see ../LICENSE
+ */
+
+/* ===================================================================
+  Quillit WYSIWYG Editor - CSS Independente
+  Versão: 2.0.0
+  Sem dependências de frameworks externos
+  =================================================================== */
+
+/* ==================== VARIÁVEIS CSS ==================== */
+:root {
+  /* Cores principais */
+  --quillit-primary: #2563eb;
+  --quillit-primary-hover: #1d4ed8;
+  --quillit-primary-light: #dbeafe;
+  
+  /* Cores neutras */
+  --quillit-bg: #ffffff;
+  --quillit-bg-secondary: #f9fafb;
+  --quillit-bg-hover: #f3f4f6;
+  --quillit-border: #e5e7eb;
+  --quillit-border-focus: #93c5fd;
+  
+  /* Texto */
+  --quillit-text: #1f2937;
+  --quillit-text-secondary: #6b7280;
+  --quillit-text-disabled: #9ca3af;
+  
+  /* Estados */
+  --quillit-success: #10b981;
+  --quillit-warning: #f59e0b;
+  --quillit-error: #ef4444;
+  --quillit-info: #3b82f6;
+  
+  /* Sombras */
+  --quillit-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --quillit-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --quillit-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  
+  /* Transições */
+  --quillit-transition: all 0.2s ease;
+  
+  /* Espaçamentos */
+  --quillit-spacing-xs: 4px;
+  --quillit-spacing-sm: 8px;
+  --quillit-spacing-md: 12px;
+  --quillit-spacing-lg: 16px;
+  --quillit-spacing-xl: 24px;
+  
+  /* Tipografia */
+  --quillit-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --quillit-font-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+  --quillit-font-size: 14px;
+  --quillit-line-height: 1.5;
+  
+  /* Bordas */
+  --quillit-radius-sm: 4px;
+  --quillit-radius-md: 6px;
+  --quillit-radius-lg: 8px;
+}
+
+/* Tema escuro */
+[data-quillit-theme="dark"] {
+  --quillit-bg: #1f2937;
+  --quillit-bg-secondary: #111827;
+  --quillit-bg-hover: #374151;
+  --quillit-border: #374151;
+  --quillit-border-focus: #60a5fa;
+  --quillit-text: #f9fafb;
+  --quillit-text-secondary: #d1d5db;
+  --quillit-text-disabled: #6b7280;
+}
+
+/* ==================== RESET E BASE ==================== */
+.quillit-editor,
+.quillit-editor * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.quillit-editor {
+  font-family: var(--quillit-font-family);
+  font-size: var(--quillit-font-size);
+  line-height: var(--quillit-line-height);
+  color: var(--quillit-text);
+  background-color: var(--quillit-bg);
+  border: 1px solid var(--quillit-border);
+  border-radius: var(--quillit-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--quillit-shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: var(--quillit-transition);
+}
+
+.quillit-editor:focus-within {
+  border-color: var(--quillit-border-focus);
+  box-shadow: var(--quillit-shadow-md);
+}
+
+/* ==================== TOOLBAR ==================== */
+.quillit-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--quillit-spacing-xs);
+  padding: var(--quillit-spacing-sm);
+  background-color: var(--quillit-bg-secondary);
+  border-bottom: 1px solid var(--quillit-border);
+  min-height: 48px;
+}
+
+.quillit-toolbar-group {
+  display: flex;
+  gap: var(--quillit-spacing-xs);
+  align-items: center;
+}
+
+/* Botões da toolbar */
+.quillit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 var(--quillit-spacing-sm);
+  font-family: var(--quillit-font-family);
+  font-size: var(--quillit-font-size);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--quillit-text);
+  background-color: var(--quillit-bg);
+  border: 1px solid var(--quillit-border);
+  border-radius: var(--quillit-radius-sm);
+  cursor: pointer;
+  transition: var(--quillit-transition);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.quillit-btn:hover {
+  background-color: var(--quillit-bg-hover);
+  border-color: var(--quillit-primary);
+}
+
+.quillit-btn:active {
+  transform: translateY(1px);
+}
+
+.quillit-btn:focus {
+  outline: 2px solid var(--quillit-primary);
+  outline-offset: 2px;
+}
+
+.quillit-btn.is-active {
+  background-color: var(--quillit-primary-light);
+  color: var(--quillit-primary);
+  border-color: var(--quillit-primary);
+}
+
+.quillit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.quillit-btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+
+/* Separador */
+.quillit-separator {
+  width: 1px;
+  height: 24px;
+  background-color: var(--quillit-border);
+  margin: 0 var(--quillit-spacing-xs);
+}
+
+/* Espaçador flexível */
+.quillit-spacer {
+  flex: 1;
+}
+
+/* ==================== DROPDOWNS ==================== */
+.quillit-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.quillit-dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--quillit-spacing-xs);
+}
+
+.quillit-dropdown-arrow {
+  font-size: 10px;
+  transition: var(--quillit-transition);
+}
+
+.quillit-dropdown.is-open .quillit-dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.quillit-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  min-width: 160px;
+  margin-top: 4px;
+  padding: var(--quillit-spacing-xs);
+  background-color: var(--quillit-bg);
+  border: 1px solid var(--quillit-border);
+  border-radius: var(--quillit-radius-md);
+  box-shadow: var(--quillit-shadow-lg);
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.quillit-dropdown.is-open .quillit-dropdown-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(34px, 1fr));
+  gap: var(--quillit-spacing-xs);
+  animation: quillit-dropdown-slide 0.15s ease-out;
+}
+
+@keyframes quillit-dropdown-slide {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.quillit-dropdown-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 34px;
+  padding: 0;
+  font-family: var(--quillit-font-family);
+  font-size: var(--quillit-font-size);
+  color: var(--quillit-text);
+  text-align: center;
+  background: none;
+  border: none;
+  border-radius: var(--quillit-radius-sm);
+  cursor: pointer;
+  transition: var(--quillit-transition);
+  white-space: nowrap;
+}
+
+.quillit-dropdown-item:hover {
+  background-color: var(--quillit-bg-hover);
+  color: var(--quillit-primary);
+}
+
+.quillit-dropdown-item:active {
+  background-color: var(--quillit-primary-light);
+}
+
+.quillit-dropdown-separator {
+  height: 1px;
+  background-color: var(--quillit-border);
+  margin: 2px 0;
+  grid-column: 1 / -1;
+}
+
+
+.quillit-visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ==================== ÁREA DE EDIÇÃO ==================== */
+.quillit-content {
+  flex: 1;
+  min-height: 300px;
+  padding: var(--quillit-spacing-lg);
+  font-family: var(--quillit-font-family);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--quillit-text);
+  background-color: var(--quillit-bg);
+  overflow-y: auto;
+  outline: none;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.quillit-content:empty::before {
+  content: attr(data-placeholder);
+  color: var(--quillit-text-secondary);
+  pointer-events: none;
+}
+
+/* Estilos do conteúdo editável */
+.quillit-content h1 {
+  font-size: 2em;
+  font-weight: 700;
+  margin: 0.67em 0;
+}
+
+.quillit-content h2 {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 0.75em 0;
+}
+
+.quillit-content h3 {
+  font-size: 1.17em;
+  font-weight: 700;
+  margin: 0.83em 0;
+}
+
+.quillit-content p {
+  margin: 1em 0;
+}
+
+.quillit-content ul,
+.quillit-content ol {
+  margin: 1em 0;
+  padding-left: 2em;
+}
+
+.quillit-content li {
+  margin: 0.5em 0;
+}
+
+/* Marcador custom (diamond) para <ul> */
+.quillit-content ul.quillit-ul-diamond {
+  list-style: none;
+}
+
+.quillit-content ul.quillit-ul-diamond > li {
+  position: relative;
+  padding-left: 1.2em;
+}
+
+.quillit-content ul.quillit-ul-diamond > li::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: currentColor;
+}
+
+.quillit-content blockquote {
+  margin: 1em 0;
+  padding-left: 1em;
+  border-left: 4px solid var(--quillit-border);
+  color: var(--quillit-text-secondary);
+  font-style: italic;
+}
+
+.quillit-content pre {
+  margin: 1em 0;
+  padding: 1em;
+  background-color: var(--quillit-bg-secondary);
+  border: 1px solid var(--quillit-border);
+  border-radius: var(--quillit-radius-sm);
+  font-family: var(--quillit-font-mono);
+  font-size: 13px;
+  line-height: 1.4;
+  overflow-x: auto;
+}
+
+.quillit-content code {
+  padding: 2px 6px;
+  background-color: var(--quillit-bg-secondary);
+  border-radius: var(--quillit-radius-sm);
+  font-family: var(--quillit-font-mono);
+  font-size: 0.9em;
+}
+
+.quillit-content pre code {
+  padding: 0;
+  background-color: transparent;
+}
+
+.quillit-content a {
+  color: var(--quillit-primary);
+  text-decoration: underline;
+}
+
+.quillit-content a:hover {
+  color: var(--quillit-primary-hover);
+}
+
+.quillit-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--quillit-radius-sm);
+}
+
+.quillit-content table {
+  width: 100%;
+  margin: 1em 0;
+  border-collapse: collapse;
+  border: 1px solid var(--quillit-border);
+}
+
+.quillit-content table th,
+.quillit-content table td {
+  padding: var(--quillit-spacing-sm);
+  border: 1px solid var(--quillit-border);
+  text-align: left;
+}
+
+.quillit-content table th {
+  background-color: var(--quillit-bg-secondary);
+  font-weight: 600;
+}
+
+.quillit-content hr {
+  margin: 1.5em 0;
+  border: none;
+  border-top: 2px solid var(--quillit-border);
+}
+
+.quillit-content mark {
+  background-color: #ffeb3b;
+  color: #000;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
+.quillit-content kbd {
+  display: inline-block;
+  padding: 2px 6px;
+  font-family: var(--quillit-font-mono);
+  font-size: 0.85em;
+  color: var(--quillit-text);
+  background-color: var(--quillit-bg-secondary);
+  border: 1px solid var(--quillit-border);
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.quillit-content abbr {
+  text-decoration: underline dotted;
+  cursor: help;
+}
+
+.quillit-content dl {
+  margin: 1em 0;
+}
+
+.quillit-content dt {
+  font-weight: 600;
+  margin-top: 0.5em;
+}
+
+.quillit-content dd {
+  margin-left: 2em;
+  margin-bottom: 0.5em;
+  color: var(--quillit-text-secondary);
+}
+
+.quillit-content video,
+.quillit-content audio,
+.quillit-content iframe {
+  max-width: 100%;
+  margin: 1em 0;
+  display: block;
+}
+
+/* ==================== MODO CÓDIGO ==================== */
+.quillit-source {
+  flex: 1;
+  min-height: 300px;
+  padding: var(--quillit-spacing-lg);
+  font-family: var(--quillit-font-mono);
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--quillit-text);
+  background-color: var(--quillit-bg-secondary);
+  border: none;
+  outline: none;
+  resize: vertical;
+  tab-size: 2;
+}
+
+.quillit-source:focus {
+  background-color: var(--quillit-bg);
+}
+
+/* ==================== BARRA DE STATUS ==================== */
+.quillit-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--quillit-spacing-sm) var(--quillit-spacing-lg);
+  background-color: var(--quillit-bg-secondary);
+  border-top: 1px solid var(--quillit-border);
+  font-size: 12px;
+  color: var(--quillit-text-secondary);
+  min-height: 32px;
+}
+
+.quillit-status-left,
+.quillit-status-right {
+  display: flex;
+  align-items: center;
+  gap: var(--quillit-spacing-md);
+}
+
+/* ==================== MODAIS E DROPDOWNS ==================== */
+.quillit-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--quillit-transition);
+}
+
+.quillit-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.quillit-modal-content {
+  background-color: var(--quillit-bg);
+  border-radius: var(--quillit-radius-lg);
+  box-shadow: var(--quillit-shadow-lg);
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  transform: scale(0.9);
+  transition: var(--quillit-transition);
+}
+
+.quillit-modal.is-open .quillit-modal-content {
+  transform: scale(1);
+}
+
+.quillit-modal-header {
+  padding: var(--quillit-spacing-lg);
+  border-bottom: 1px solid var(--quillit-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quillit-modal-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--quillit-text);
+}
+
+.quillit-modal-close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--quillit-text-secondary);
+  border-radius: var(--quillit-radius-sm);
+  transition: var(--quillit-transition);
+}
+
+.quillit-modal-close:hover {
+  background-color: var(--quillit-bg-hover);
+  color: var(--quillit-text);
+}
+
+.quillit-modal-body {
+  padding: var(--quillit-spacing-lg);
+}
+
+.quillit-modal-footer {
+  padding: var(--quillit-spacing-lg);
+  border-top: 1px solid var(--quillit-border);
+  display: flex;
+  gap: var(--quillit-spacing-sm);
+  justify-content: flex-end;
+}
+
+/* ==================== FORMS ==================== */
+.quillit-form-group {
+  margin-bottom: var(--quillit-spacing-lg);
+}
+
+.quillit-label {
+  display: block;
+  margin-bottom: var(--quillit-spacing-xs);
+  font-weight: 500;
+  color: var(--quillit-text);
+}
+
+.quillit-input,
+.quillit-textarea,
+.quillit-select {
+  width: 100%;
+  padding: var(--quillit-spacing-sm) var(--quillit-spacing-md);
+  font-family: var(--quillit-font-family);
+  font-size: var(--quillit-font-size);
+  color: var(--quillit-text);
+  background-color: var(--quillit-bg);
+  border: 1px solid var(--quillit-border);
+  border-radius: var(--quillit-radius-sm);
+  outline: none;
+  transition: var(--quillit-transition);
+}
+
+.quillit-input:focus,
+.quillit-textarea:focus,
+.quillit-select:focus {
+  border-color: var(--quillit-primary);
+  box-shadow: 0 0 0 3px var(--quillit-primary-light);
+}
+
+.quillit-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+/* ==================== TABS ==================== */
+.quillit-tabs {
+  display: flex;
+  border-bottom: 2px solid var(--quillit-border);
+  margin-bottom: var(--quillit-spacing-lg);
+  gap: var(--quillit-spacing-xs);
+}
+
+.quillit-tab {
+  padding: var(--quillit-spacing-sm) var(--quillit-spacing-md);
+  font-family: var(--quillit-font-family);
+  font-size: var(--quillit-font-size);
+  font-weight: 500;
+  color: var(--quillit-text-secondary);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: var(--quillit-transition);
+  position: relative;
+  bottom: -2px;
+}
+
+.quillit-tab:hover {
+  color: var(--quillit-primary);
+  background-color: var(--quillit-bg-hover);
+}
+
+.quillit-tab.active {
+  color: var(--quillit-primary);
+  border-bottom-color: var(--quillit-primary);
+}
+
+.quillit-tab-content {
+  display: none;
+}
+
+.quillit-tab-content.active {
+  display: block;
+}
+
+/* ==================== BIBLIOTECA DE IMAGENS ==================== */
+.quillit-media-info {
+  margin-bottom: var(--quillit-spacing-md);
+  color: var(--quillit-text-secondary);
+  font-size: 13px;
+}
+
+.quillit-media-toolbar {
+  display: flex;
+  gap: var(--quillit-spacing-sm);
+  align-items: center;
+  margin-bottom: var(--quillit-spacing-md);
+}
+
+.quillit-media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: var(--quillit-spacing-md);
+}
+
+.quillit-media-status {
+  grid-column: 1 / -1;
+  padding: var(--quillit-spacing-md);
+  border: 1px dashed var(--quillit-border);
+  border-radius: var(--quillit-radius-md);
+  color: var(--quillit-text-secondary);
+  background: var(--quillit-bg-secondary);
+}
+
+.quillit-media-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--quillit-spacing-xs);
+  padding: var(--quillit-spacing-sm);
+  border: 1px solid var(--quillit-border);
+  border-radius: var(--quillit-radius-md);
+  background: var(--quillit-bg);
+  cursor: pointer;
+  text-align: left;
+  transition: var(--quillit-transition);
+}
+
+.quillit-media-item:hover {
+  border-color: var(--quillit-primary);
+  box-shadow: 0 0 0 3px var(--quillit-primary-light);
+}
+
+.quillit-media-item.is-dir .quillit-media-thumb {
+  background: var(--quillit-bg-secondary);
+}
+
+.quillit-media-up {
+  opacity: 0.95;
+}
+
+.quillit-media-thumb {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  border-radius: var(--quillit-radius-sm);
+  background: var(--quillit-bg-secondary);
+}
+
+.quillit-media-name {
+  font-size: 12px;
+  color: var(--quillit-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* ==================== RESPONSIVIDADE ==================== */
+@media (max-width: 768px) {
+  .quillit-toolbar {
+    gap: 2px;
+    padding: var(--quillit-spacing-xs);
+  }
+  
+  .quillit-btn {
+    min-width: 28px;
+    height: 28px;
+    padding: 0 var(--quillit-spacing-xs);
+    font-size: 12px;
+  }
+  
+  .quillit-content {
+    padding: var(--quillit-spacing-md);
+    font-size: 14px;
+  }
+  
+  .quillit-separator {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .quillit-toolbar {
+    flex-wrap: wrap;
+  }
+  
+  .quillit-modal-content {
+    width: 95%;
+    max-height: 90vh;
+  }
+}
+
+/* ==================== UTILITÁRIOS ==================== */
+.quillit-hidden {
+  display: none !important;
+}
+
+.quillit-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ==================== SCROLLBAR CUSTOMIZADA ==================== */
+.quillit-content::-webkit-scrollbar,
+.quillit-source::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.quillit-content::-webkit-scrollbar-track,
+.quillit-source::-webkit-scrollbar-track {
+  background-color: var(--quillit-bg-secondary);
+}
+
+.quillit-content::-webkit-scrollbar-thumb,
+.quillit-source::-webkit-scrollbar-thumb {
+  background-color: var(--quillit-border);
+  border-radius: 4px;
+}
+
+.quillit-content::-webkit-scrollbar-thumb:hover,
+.quillit-source::-webkit-scrollbar-thumb:hover {
+  background-color: var(--quillit-text-secondary);
+}
+
+/* Firefox */
+.quillit-content,
+.quillit-source {
+  scrollbar-width: thin;
+  scrollbar-color: var(--quillit-border) var(--quillit-bg-secondary);
+}

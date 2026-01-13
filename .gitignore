@@ -1,0 +1,45 @@
+# OS / explorer noise
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+Desktop.ini
+
+# Editor/IDE
+.idea/
+*.iml
+.vscode/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Node tooling (se você usar bundlers/linters localmente)
+node_modules/
+.npm/
+.pnpm-store/
+.yarn/
+.yarn-cache/
+.yarn-unplugged/
+.yarn-integrity
+.parcel-cache/
+.vite/
+.eslintcache
+.stylelintcache
+
+# Build outputs (caso existam futuramente)
+dist/
+build/
+out/
+coverage/
+
+# Misc temp
+*.tmp
+*.temp
+*.swp
+*~

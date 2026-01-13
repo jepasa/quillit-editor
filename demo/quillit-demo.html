@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quillit Editor Demo - CMS Pro</title>
+  <link rel="stylesheet" href="../css/quillit-editor.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    .demo-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .demo-header {
+      text-align: center;
+      color: white;
+      margin-bottom: 40px;
+    }
+    .demo-header h1 {
+      font-size: 3em;
+      margin: 0 0 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+    .demo-header p {
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
+    .demo-section {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    .demo-section h2 {
+      margin-top: 0;
+      color: #2563eb;
+      font-size: 1.8em;
+    }
+    .demo-section p {
+      color: #6b7280;
+      margin-bottom: 20px;
+    }
+    .demo-controls {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .demo-btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .demo-btn-primary {
+      background: #2563eb;
+      color: white;
+    }
+    .demo-btn-primary:hover {
+      background: #1d4ed8;
+    }
+    .demo-btn-secondary {
+      background: #e5e7eb;
+      color: #1f2937;
+    }
+    .demo-btn-secondary:hover {
+      background: #d1d5db;
+    }
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      cursor: pointer;
+      font-size: 24px;
+      transition: all 0.3s;
+      z-index: 1000;
+    }
+    .theme-toggle:hover {
+      transform: rotate(180deg) scale(1.1);
+    }
+    @media (max-width: 768px) {
+      body { padding: 10px; }
+      .demo-header h1 { font-size: 2em; }
+      .demo-section { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" id="themeToggle" title="Alternar tema">🌙</button>
+
+  <div class="demo-container">
+    <div class="demo-header">
+      <h1>🎨 Quillit Editor CMS Pro</h1>
+      <p>Editor WYSIWYG completo para sistemas de gerenciamento de conteúdo</p>
+
+      <div class="demo-controls" style="justify-content:center;margin-top:16px;">
+        <label for="langSelect" style="color:#fff;font-weight:600;">Idioma:</label>
+        <select id="langSelect" class="demo-btn demo-btn-secondary" style="padding:8px 12px;">
+          <option value="pt-BR">Português (Brasil)</option>
+          <option value="en-US">English (US)</option>
+          <option value="es-ES">Español (ES)</option>
+          <option value="fr-FR">Français (FR)</option>
+          <option value="de-DE">Deutsch (DE)</option>
+          <option value="zh-CN">中文 (简体)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="demo-section">
+      <h2>1. Editor Completo (Todas as Ferramentas)</h2>
+      <p>Editor com todas as funcionalidades habilitadas: formatação, cores, links, imagens, tabelas, código e mais.</p>
+      <textarea id="editor1" class="quillit-full" rows="6">
+        <h2>Bem-vindo ao Quillit Editor!</h2>
+        <p>Este é um <strong>editor WYSIWYG</strong> completo e <em>sem dependências</em> de frameworks externos.</p>
+        <p>Experimente as ferramentas de formatação, inserção de imagens, tabelas e muito mais!</p>
+      </textarea>
+    </div>
+
+    <div class="demo-section">
+      <h2>2. Editor Minimalista</h2>
+      <p>Versão simplificada com apenas ferramentas básicas de formatação.</p>
+      <textarea id="editor2" class="quillit-minimal" rows="4"></textarea>
+    </div>
+
+    <div class="demo-section">
+      <h2>3. Editor para Artigos</h2>
+      <p>Configurado especialmente para redação de artigos e blog posts.</p>
+      <textarea id="editor3" class="quillit-article" rows="6">
+        <h1>Título do Artigo</h1>
+        <p>Comece a escrever seu artigo aqui...</p>
+      </textarea>
+    </div>
+
+    <div class="demo-section">
+      <h2>4. Editor para Página</h2>
+      <p>Otimizado para páginas institucionais/landing pages: headings, alinhamento, tabelas, mídia e modo código.</p>
+      <textarea id="editor4" class="quillit-page" rows="6">
+        <h2>Seção da Página</h2>
+        <p>Conteúdo da página aqui...</p>
+      </textarea>
+    </div>
+
+    <div class="demo-section">
+      <h2>5. Editor Técnico</h2>
+      <p>Otimizado para documentação técnica com suporte a código, atalhos e elementos semânticos (kbd/abbr/dl).</p>
+      <textarea id="editor5" class="quillit-technical" rows="6"></textarea>
+    </div>
+
+    <div class="demo-section">
+      <h2>Controles de Teste</h2>
+      <div class="demo-controls">
+        <button class="demo-btn demo-btn-primary" onclick="getContent(1)">Ver Conteúdo HTML</button>
+        <button class="demo-btn demo-btn-secondary" onclick="clearEditor(1)">Limpar Editor</button>
+        <button class="demo-btn demo-btn-secondary" onclick="togglePastePlain()">Alternar Cole Limpo</button>
+      </div>
+      <pre id="outputHtml" style="background:#f3f4f6;padding:15px;border-radius:6px;overflow-x:auto;display:none;"></pre>
+    </div>
+  </div>
+
+  <script type="module">
+    import { init as initQuillit } from '../quillit-editor.js';
+
+    let editors = {};
+    let currentTheme = 'light';
+    let pastePlain = true;
+
+    const DEMO_LANG_STORAGE_KEY = 'quillitDemoLang';
+    const AVAILABLE_LANGS = ['pt-BR', 'en-US', 'es-ES', 'fr-FR', 'de-DE', 'zh-CN'];
+
+    function resolveDemoLanguage(code) {
+      const raw = String(code || '').trim();
+      if (!raw) return 'pt-BR';
+      if (AVAILABLE_LANGS.includes(raw)) return raw;
+
+      const lower = raw.toLowerCase();
+      const aliases = {
+        pt: 'pt-BR',
+        'pt-br': 'pt-BR',
+        en: 'en-US',
+        'en-us': 'en-US',
+        es: 'es-ES',
+        'es-es': 'es-ES',
+        fr: 'fr-FR',
+        'fr-fr': 'fr-FR',
+        de: 'de-DE',
+        'de-de': 'de-DE',
+        zh: 'zh-CN',
+        'zh-cn': 'zh-CN'
+      };
+
+      if (aliases[lower]) return aliases[lower];
+      const base = lower.split('-')[0];
+      if (aliases[base]) return aliases[base];
+      return 'pt-BR';
+    }
+
+    // Define o idioma do documento ANTES do init (para autoLanguage funcionar)
+    const storedLang = localStorage.getItem(DEMO_LANG_STORAGE_KEY);
+    const initialLang = resolveDemoLanguage(storedLang || document.documentElement.lang || navigator.language);
+    document.documentElement.lang = initialLang;
+
+    const langSelect = document.getElementById('langSelect');
+    if (langSelect) {
+      langSelect.value = initialLang;
+      langSelect.addEventListener('change', () => {
+        localStorage.setItem(DEMO_LANG_STORAGE_KEY, langSelect.value);
+        window.location.reload();
+      });
+    }
+
+    const mediaDefaults = {
+      mediaBasePath: '/assets/images',
+      mediaLocalDir: 'assets/images'
+    };
+
+    // Editor completo
+    editors.full = initQuillit('#editor1', {
+      autoLanguage: true,
+      theme: currentTheme,
+      charCount: true,
+      wordCount: true,
+      pastePlain: pastePlain,
+      ...mediaDefaults
+    });
+
+    // Editor minimalista
+    editors.minimal = initQuillit('#editor2', {
+      autoLanguage: true,
+      theme: currentTheme,
+      ...mediaDefaults,
+      toolbar: [
+        'bold', 'italic', 'underline', 'separator',
+        'unorderedList', 'orderedList', 'separator',
+        'link', 'separator',
+        'undo', 'redo'
+      ],
+      charCount: false
+    });
+
+    // Editor para artigos / blog
+    editors.article = initQuillit('#editor3', {
+      autoLanguage: true,
+      theme: currentTheme,
+      ...mediaDefaults,
+      toolbar: [
+        { type: 'dropdown', labelKey: 'toolbar.group.style', label: 'Estilo', icon: '¶', items: ['paragraph', 'heading1', 'heading2', 'heading3'] },
+        'separator',
+        'bold', 'italic', 'underline', 'separator',
+        'foreColor', 'backColor', 'separator',
+        { type: 'dropdown', labelKey: 'toolbar.group.lists', label: 'Listas', icon: '•', items: ['unorderedList', 'defList'] },
+        { type: 'dropdown', labelKey: 'toolbar.group.ordered', label: 'Numeração', icon: '1.', items: ['orderedList', 'separator', 'orderedListDecimal', 'orderedListDecimalLeadingZero', 'orderedListUpperAlpha', 'orderedListLowerAlpha', 'orderedListUpperRoman', 'orderedListLowerRoman', 'separator', 'orderedListStart', 'orderedListReversed', 'orderedListItemValue'] },
+        'separator',
+        { type: 'dropdown', labelKey: 'toolbar.group.insert', label: 'Inserir', icon: '+', items: ['link', 'image', 'video', 'hr'] },
+        'unlink', 'separator',
+        'quote', 'separator',
+        { type: 'dropdown', labelKey: 'toolbar.group.align', label: 'Alinhar', icon: '☰', items: ['alignLeft', 'alignCenter', 'alignRight'] },
+        'separator',
+        'undo', 'redo', 'source', 'fullscreen'
+      ],
+      charCount: true,
+      wordCount: true
+    });
+
+    // Editor para página
+    editors.page = initQuillit('#editor4', {
+      autoLanguage: true,
+      theme: currentTheme,
+      ...mediaDefaults,
+      toolbar: [
+        { type: 'dropdown', labelKey: 'toolbar.group.style', label: 'Estilo', icon: '¶', items: ['paragraph', 'heading1', 'heading2', 'heading3', 'heading4'] },
+        'separator',
+        'bold', 'italic', 'underline', 'strike', 'separator',
+        { type: 'dropdown', labelKey: 'toolbar.group.lists', label: 'Listas', icon: '•', items: ['unorderedList', 'defList'] },
+        { type: 'dropdown', labelKey: 'toolbar.group.ordered', label: 'Numeração', icon: '1.', items: ['orderedList', 'separator', 'orderedListDecimal', 'orderedListDecimalLeadingZero', 'orderedListUpperAlpha', 'orderedListLowerAlpha', 'orderedListUpperRoman', 'orderedListLowerRoman', 'separator', 'orderedListStart', 'orderedListReversed', 'orderedListItemValue'] },
+        'indent', 'outdent', 'separator',
+        { type: 'dropdown', labelKey: 'toolbar.group.align', label: 'Alinhar', icon: '☰', items: ['alignLeft', 'alignCenter', 'alignRight', 'alignJustify'] },
+        'separator',
+        { type: 'dropdown', labelKey: 'toolbar.group.insert', label: 'Inserir', icon: '+', items: ['link', 'image', 'video', 'audio', 'table', 'hr'] },
+        'unlink', 'separator',
+        'undo', 'redo', 'source', 'fullscreen'
+      ],
+      charCount: true
+    });
+
+    // Editor técnico
+    editors.technical = initQuillit('#editor5', {
+      autoLanguage: true,
+      theme: currentTheme,
+      ...mediaDefaults,
+      toolbar: [
+        { type: 'dropdown', labelKey: 'toolbar.group.style', label: 'Estilo', icon: '¶', items: ['paragraph', 'heading2', 'heading3', 'heading4'] },
+        'separator',
+        'bold', 'italic', 'inlineCode', 'separator',
+        { type: 'dropdown', labelKey: 'toolbar.group.technical', label: 'Técnico', icon: '⚙', items: ['kbd', 'abbr', 'defList', 'codeBlock'] },
+        'separator',
+        { type: 'dropdown', labelKey: 'toolbar.group.lists', label: 'Listas', icon: '•', items: ['unorderedList', 'defList'] },
+        { type: 'dropdown', labelKey: 'toolbar.group.ordered', label: 'Numeração', icon: '1.', items: ['orderedList', 'separator', 'orderedListDecimal', 'orderedListDecimalLeadingZero', 'orderedListUpperAlpha', 'orderedListLowerAlpha', 'orderedListUpperRoman', 'orderedListLowerRoman', 'separator', 'orderedListStart', 'orderedListReversed', 'orderedListItemValue'] },
+        'separator',
+        { type: 'dropdown', labelKey: 'toolbar.group.insert', label: 'Inserir', icon: '+', items: ['link', 'table', 'hr'] },
+        'unlink', 'separator',
+        'undo', 'redo', 'source', 'fullscreen'
+      ],
+      charCount: true
+    });
+
+    // Toggle tema
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+      document.querySelectorAll('.quillit-editor').forEach(editor => {
+        editor.setAttribute('data-quillit-theme', currentTheme);
+      });
+      document.getElementById('themeToggle').textContent = currentTheme === 'light' ? '🌙' : '☀️';
+    });
+
+    // Funções globais para demonstração
+    window.getContent = (num) => {
+      const editor = document.querySelector(`#editor${num}`);
+      const output = document.getElementById('outputHtml');
+      output.textContent = editor.value;
+      output.style.display = 'block';
+      setTimeout(() => output.style.display = 'none', 5000);
+    };
+
+    window.clearEditor = (num) => {
+      const editor = document.querySelector(`#editor${num}`);
+      editor.value = '';
+      const quillitContent = editor.nextElementSibling?.querySelector('.quillit-content');
+      if (quillitContent) quillitContent.innerHTML = '';
+    };
+
+    window.togglePastePlain = () => {
+      pastePlain = !pastePlain;
+      alert(`Cole como texto puro: ${pastePlain ? 'ATIVADO' : 'DESATIVADO'}\n\n(Recarregue a página para aplicar)`);
+    };
+
+    // Log de inicialização
+    console.log('✅ Quillit Editor inicializado com sucesso!');
+    console.log('📝 Editores criados:', Object.keys(editors));
+  </script>
+</body>
+</html>
