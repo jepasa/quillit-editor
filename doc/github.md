@@ -28,6 +28,19 @@ No GitHub:
 
 > Importante: evite `All branches`, senão você pode bloquear push em branches de feature/chore (e até travar a atualização de PRs).
 
+## Checklist para (re)criar o ruleset sem travar o repo
+
+Se você removeu o ruleset para destravar o repositório, use esta ordem:
+
+1. Garanta que a `main` contém o workflow corrigido
+  - Faça merge do PR que atualiza `./.github/workflows/sanity.yml`.
+2. Rode o workflow na `main` pelo menos 1 vez
+  - `Actions` → workflow `sanity` → `Run workflow`.
+  - Isso faz o GitHub “registrar” o nome do status check para aparecer na lista.
+3. Só então recrie o ruleset para a `main`
+
+Essa sequência evita o caso comum de: status check obrigatório “fantasma” ficar como **Expected — Waiting for status**.
+
 ### Branch rules sugeridas
 
 - Restrict creations: OFF
@@ -68,6 +81,21 @@ Isso geralmente significa que você selecionou algum status check que **não est
 - Remova qualquer check genérico `sanity` ou variantes duplicadas.
 
 > Observação: se o GitHub não listar o check, rode o workflow ao menos 1 vez em `Actions` → `sanity` → `Run workflow`.
+
+## Alternativa: Branch protection “clássica”
+
+Se você preferir algo mais simples que rulesets:
+
+1. `Settings` → `Branches` → `Add branch protection rule`
+2. Branch name pattern: `main`
+3. Habilite:
+  - Require a pull request before merging
+  - Require approvals (1)
+  - Require code owner review
+  - Require status checks to pass → `sanity / js-sanity (pull_request)`
+  - Require branches to be up to date before merging
+  - Block force pushes
+  - Restrict deletions
 
 ## Notas
 
