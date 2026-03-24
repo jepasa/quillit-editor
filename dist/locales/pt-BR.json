@@ -1,0 +1,273 @@
+{
+  "placeholder": {
+    "default": "Digite seu conteúdo..."
+  },
+  "common": {
+    "close": "Fechar",
+    "cancel": "Cancelar",
+    "insert": "Inserir",
+    "back": "Voltar",
+    "loading": "Carregando...",
+    "error": "Erro"
+  },
+  "status": {
+    "ready": "Pronto para edição",
+    "code": "Modo código HTML",
+    "visual": "Modo visual",
+    "fullscreen": "Modo tela cheia ativo",
+    "theme": {
+      "light": "Tema claro ativo",
+      "dark": "Tema escuro ativo"
+    }
+  },
+  "unit": {
+    "character": {
+      "one": "caractere",
+      "other": "caracteres"
+    },
+    "word": {
+      "one": "palavra",
+      "other": "palavras"
+    }
+  },
+  "toolbar": {
+    "ariaLabel": "Barra de ferramentas do editor",
+    "group": {
+      "style": "Estilo",
+      "advanced": "Avançado",
+      "technical": "Técnico",
+      "lists": "Listas",
+      "ordered": "Numeração",
+      "align": "Alinhar",
+      "fontFamily": "Fonte",
+      "fontSize": "Tamanho",
+      "insert": "Inserir",
+      "table": "Tabela"
+    }
+  },
+  "tool": {
+    "paragraph": "Parágrafo",
+    "heading1": "Título H1",
+    "heading2": "Título H2",
+    "heading3": "Título H3",
+    "heading4": "Título H4",
+    "heading5": "Título H5",
+    "heading6": "Título H6",
+    "bold": "Negrito",
+    "italic": "Itálico",
+    "underline": "Sublinhar",
+    "strike": "Tachado",
+    "subscript": "Subscrito",
+    "superscript": "Sobrescrito",
+    "mark": "Destacar",
+    "unorderedList": "Lista",
+    "orderedList": "Lista ordenada",
+    "orderedListDecimal": "Numeração: 1,2,3",
+    "orderedListDecimalLeadingZero": "Numeração: 01,02,03",
+    "orderedListUpperAlpha": "Numeração: A,B,C",
+    "orderedListLowerAlpha": "Numeração: a,b,c",
+    "orderedListUpperRoman": "Numeração: I,II,III",
+    "orderedListLowerRoman": "Numeração: i,ii,iii",
+    "orderedListLowerGreek": "Numeração: α,β,γ",
+    "orderedListStart": "Começar numeração...",
+    "orderedListReversed": "Alternar numeração reversa",
+    "orderedListItemValue": "Definir número do item...",
+    "unorderedListDisc": "Marcador: disc",
+    "unorderedListCircle": "Marcador: circle",
+    "unorderedListSquare": "Marcador: square",
+    "unorderedListDiamond": "Marcador: diamond",
+    "indent": "Aumentar indentação",
+    "outdent": "Diminuir indentação",
+    "quote": "Citação",
+    "codeBlock": "Bloco de código",
+    "alignLeft": "Alinhar à esquerda",
+    "alignCenter": "Centralizar",
+    "alignRight": "Alinhar à direita",
+    "alignJustify": "Justificar",
+    "hr": "Linha horizontal",
+    "specialChars": "Caracteres especiais",
+    "clear": "Limpar formatação",
+    "undo": "Desfazer",
+    "redo": "Refazer",
+    "source": "Código HTML",
+    "visual": "Visual",
+    "link": "Inserir link",
+    "unlink": "Remover link",
+    "image": "Inserir imagem",
+    "video": "Inserir vídeo",
+    "audio": "Inserir áudio",
+    "inlineCode": "Código inline",
+    "table": "Inserir tabela",
+    "addRowAbove": "Adicionar linha acima",
+    "addRowBelow": "Adicionar linha abaixo",
+    "deleteRow": "Remover linha",
+    "addColumnLeft": "Adicionar coluna à esquerda",
+    "addColumnRight": "Adicionar coluna à direita",
+    "deleteColumn": "Remover coluna",
+    "deleteTable": "Excluir tabela",
+    "kbd": "Tecla de teclado",
+    "abbr": "Abreviação",
+    "defList": "Lista de definição",
+    "foreColor": "Cor do texto",
+    "backColor": "Cor de fundo",
+    "fontFamilyArial": "Arial",
+    "fontFamilyGeorgia": "Georgia",
+    "fontFamilyTimes": "Times New Roman",
+    "fontFamilyCourier": "Courier New",
+    "fontFamilyVerdana": "Verdana",
+    "fontSize10": "10px",
+    "fontSize12": "12px",
+    "fontSize14": "14px",
+    "fontSize16": "16px",
+    "fontSize18": "18px",
+    "fontSize20": "20px",
+    "fontSize24": "24px",
+    "fontSize32": "32px",
+    "fontSizeCustomPlaceholder": "...(px)",
+    "fullscreen": "Tela cheia",
+    "fontFamilyNoneDetected": "Nenhuma fonte identificada",
+    "toggleTheme": "Alternar tema",
+    "themeLight": "Tema claro",
+    "themeDark": "Tema escuro"
+  },
+  "modal": {
+    "orderedListStart": {
+      "title": "Início da lista numerada",
+      "label": "Começar em:"
+    },
+    "orderedListItemValue": {
+      "title": "Número do item",
+      "label": "Definir número do item:"
+    },
+    "foreColor": {
+      "title": "Cor do Texto",
+      "pick": "Escolha a cor:",
+      "custom": "Cor personalizada (hex/rgb):",
+      "remove": "Remover cor"
+    },
+    "backColor": {
+      "title": "Cor de Fundo",
+      "pick": "Escolha a cor:",
+      "custom": "Cor personalizada (hex/rgb):",
+      "remove": "Remover cor"
+    },
+    "link": {
+      "title": "Inserir Link",
+      "url": "URL:",
+      "urlPlaceholder": "https://exemplo.com",
+      "text": "Texto (opcional):",
+      "textPlaceholder": "Texto do link",
+      "titlePlaceholder": "Dica ao passar o mouse",
+      "newTab": "Abrir em nova aba"
+    },
+    "image": {
+      "title": "Inserir Imagem",
+      "tabRemote": "🌐 Remoto",
+      "tabLocal": "📁 Local",
+      "url": "URL da imagem:",
+      "urlPlaceholder": "https://exemplo.com/imagem.jpg",
+      "alt": "Texto alternativo:",
+      "altPlaceholder": "Descrição da imagem",
+      "helpText": "Texto de ajuda:",
+      "helpTextPlaceholder": "Dica ao passar o mouse",
+      "width": "Largura máxima (px, opcional):",
+      "widthPlaceholder": "800",
+      "height": "Altura máxima (px, opcional):",
+      "heightPlaceholder": "600",
+      "size": "Tamanho:",
+      "sizePlaceholder": "Auto",
+      "localPath": "Caminho do arquivo:",
+      "localPathPlaceholder": "imagens/minha-imagem.jpg",
+      "browseTitle": "Abrir biblioteca de imagens",
+      "browseChecking": "📂 Verificando...",
+      "browseOpen": "📂 Abrir biblioteca",
+      "browseUnavailable": "📂 Biblioteca indisponível",
+      "dirLabel": "Diretório",
+      "dirNotConfigured": "não configurado",
+      "statusNeedLocalDir": "Defina <code>mediaLocalDir</code> nas opções do editor para habilitar a biblioteca local.",
+      "statusNeedEndpoint": "Biblioteca indisponível: defina <code>mediaLibraryEndpoint</code> (ou mantenha o endpoint junto do componente para auto-resolve).",
+      "statusUnavailableHint": "Este projeto não está servindo o endpoint da biblioteca. Você ainda pode informar o caminho manualmente."
+    },
+    "imageLibrary": {
+      "title": "Biblioteca de Imagens",
+      "close": "Fechar",
+      "directory": "Diretório:",
+      "folder": "Pasta:",
+      "filterPlaceholder": "Filtrar imagens...",
+      "filterAria": "Filtrar imagens",
+      "loadingImages": "Carregando imagens...",
+      "loading": "Carregando...",
+      "none": "Nenhuma imagem encontrada.",
+      "backTitle": "Voltar",
+      "openFolderError": "Erro ao abrir pasta: {message}",
+      "loadItemsError": "Erro ao carregar itens: {message}",
+      "notConfigured": "Biblioteca não configurada. Defina <code>mediaLibraryEndpoint</code> e <code>mediaLocalDir</code> nas opções do editor."
+    },
+    "table": {
+      "title": "Inserir Tabela",
+      "rows": "Linhas:",
+      "cols": "Colunas:",
+      "includeHeader": "Incluir cabeçalho",
+      "headerPrefix": "Cabeçalho {n}"
+    },
+    "codeBlock": {
+      "title": "Bloco de Código",
+      "language": "Linguagem (opcional):",
+      "languagePlaceholder": "ex: js, html, css"
+    },
+    "specialChars": {
+      "title": "Caracteres especiais",
+      "description": "Clique em um caractere para inserir no texto.",
+      "insertCharAria": "Inserir caractere {char}"
+    },
+    "kbd": {
+      "title": "Tecla de Teclado",
+      "key": "Tecla:"
+    },
+    "abbr": {
+      "title": "Abreviação",
+      "abbr": "Abreviação:",
+      "meaning": "Significado completo:"
+    },
+    "defList": {
+      "title": "Lista de Definição",
+      "count": "Número de itens:",
+      "term": "Termo {n}",
+      "def": "Definição {n}"
+    },
+    "video": {
+      "title": "Inserir Vídeo",
+      "tabLocal": "📁 Local",
+      "tabRemote": "🌐 Remoto",
+      "localPath": "Caminho do arquivo:",
+      "localPathPlaceholder": "videos/meu-video.mp4",
+      "remoteUrl": "URL (YouTube, Vimeo ou direto):",
+      "remoteUrlPlaceholder": "https://www.youtube.com/watch?v=..."
+    },
+    "audio": {
+      "title": "Inserir Áudio",
+      "tabLocal": "📁 Local",
+      "tabRemote": "🌐 Remoto",
+      "localPath": "Caminho do arquivo:",
+      "localPathPlaceholder": "audio/musica.mp3",
+      "remoteUrl": "URL do áudio:",
+      "remoteUrlPlaceholder": "https://exemplo.com/audio.mp3"
+    }
+  },
+  "insertDefaults": {
+    "inlineCode": "code",
+    "mark": "destaque",
+    "codeBlock": "code"
+  },
+  "errors": {
+    "mediaLibraryHttp": "Falha ao carregar biblioteca (HTTP {status})",
+    "mediaLibraryInvalid": "Resposta inválida da biblioteca de mídia",
+    "mediaLibraryUnauthorized": "Acesso não autorizado à biblioteca de mídia.",
+    "mediaLibraryForbidden": "Acesso negado à biblioteca de mídia.",
+    "invalidColor": "Informe uma cor válida (hex, rgb ou hsl)."
+  },
+  "browser": {
+    "noVideo": "Seu navegador não suporta vídeos.",
+    "noAudio": "Seu navegador não suporta áudio."
+  }
+}

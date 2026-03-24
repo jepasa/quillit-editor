@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="16"
+   height="16"
+   fill="currentColor"
+   class="bi bi-list-task"
+   viewBox="0 0 16 16"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="list-circle.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs12" />
+  <sodipodi:namedview
+     id="namedview10"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     showguides="true"
+     inkscape:zoom="52.625"
+     inkscape:cx="7.2209026"
+     inkscape:cy="8.0285036"
+     inkscape:window-width="2560"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg8" />
+  <path
+     id="path4"
+     d="M 2.5 2.5 A 1 1 0 0 0 1.5 3.5 A 1 1 0 0 0 2.5 4.5 A 1 1 0 0 0 3.5 3.5 A 1 1 0 0 0 2.5 2.5 z M 2.5 2.859375 A 0.64075634 0.64075634 0 0 1 3.140625 3.5 A 0.64075634 0.64075634 0 0 1 2.5 4.140625 A 0.64075634 0.64075634 0 0 1 1.859375 3.5 A 0.64075634 0.64075634 0 0 1 2.5 2.859375 z M 5.5 3 A 0.5 0.5 0 0 0 5 3.5 A 0.5 0.5 0 0 0 5.5 4 L 14.5 4 A 0.5 0.5 0 0 0 14.5 3 L 5.5 3 z M 2.5 6.5 A 1 1 0 0 0 1.5 7.5 A 1 1 0 0 0 2.5 8.5 A 1 1 0 0 0 3.5 7.5 A 1 1 0 0 0 2.5 6.5 z M 2.5 6.859375 A 0.64075634 0.64075634 0 0 1 3.140625 7.5 A 0.64075634 0.64075634 0 0 1 2.5 8.140625 A 0.64075634 0.64075634 0 0 1 1.859375 7.5 A 0.64075634 0.64075634 0 0 1 2.5 6.859375 z M 5.5 7 A 0.5 0.5 0 0 0 5.5 8 L 14.5 8 A 0.5 0.5 0 0 0 14.5 7 L 5.5 7 z M 2.5 10.5 A 1 1 0 0 0 1.5 11.5 A 1 1 0 0 0 2.5 12.5 A 1 1 0 0 0 3.5 11.5 A 1 1 0 0 0 2.5 10.5 z M 2.5 10.859375 A 0.64075634 0.64075634 0 0 1 3.140625 11.5 A 0.64075634 0.64075634 0 0 1 2.5 12.140625 A 0.64075634 0.64075634 0 0 1 1.859375 11.5 A 0.64075634 0.64075634 0 0 1 2.5 10.859375 z M 5.5 11 A 0.5 0.5 0 0 0 5.5 12 L 14.5 12 A 0.5 0.5 0 0 0 14.5 11 L 5.5 11 z " />
+</svg>

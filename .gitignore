@@ -1,0 +1,40 @@
+public-mirror/dist/
+public-mirror/bundle/
+dev/
+vendor/
+
+# Dependencias locais
+node_modules/
+
+# Ambientes locais
+.venv/
+.env
+.env.*
+tools/
+
+# Caches e temporarios
+.phpunit.result.cache
+.pytest_cache/
+.cache/
+.tmp/
+tmp/
+
+# Saidas de testes e cobertura
+coverage/
+playwright-report/
+test-results/
+
+# Relatorios gerados por ferramentas (mantem apenas docs de reports/)
+reports/browser/
+reports/coverage/
+reports/lighthouse/
+reports/playwright-report/
+reports/redundancy/
+reports/test-results/
+reports/validation/
+
+# Arquivos de workspace/editor locais
+*.code-workspace
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json

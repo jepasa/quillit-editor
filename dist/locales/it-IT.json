@@ -1,0 +1,247 @@
+{
+  "placeholder": {
+    "default": "Scrivi il tuo contenuto..."
+  },
+  "common": {
+    "close": "Chiudi",
+    "cancel": "Annulla",
+    "insert": "Inserisci",
+    "back": "Indietro",
+    "loading": "Caricamento...",
+    "error": "Errore"
+  },
+  "status": {
+    "ready": "Pronto per la modifica",
+    "code": "Modalita codice HTML",
+    "visual": "Modalita visuale",
+    "fullscreen": "Modalita schermo intero attivata"
+  },
+  "unit": {
+    "character": {
+      "one": "carattere",
+      "other": "caratteri"
+    },
+    "word": {
+      "one": "parola",
+      "other": "parole"
+    }
+  },
+  "toolbar": {
+    "ariaLabel": "Barra strumenti editor",
+    "group": {
+      "style": "Stile",
+      "advanced": "Avanzato",
+      "technical": "Tecnico",
+      "lists": "Liste",
+      "ordered": "Numerazione",
+      "align": "Allineamento",
+      "insert": "Inserisci",
+      "table": "Tabella"
+    }
+  },
+  "tool": {
+    "paragraph": "Paragrafo",
+    "heading1": "Titolo H1",
+    "heading2": "Titolo H2",
+    "heading3": "Titolo H3",
+    "heading4": "Titolo H4",
+    "heading5": "Titolo H5",
+    "heading6": "Titolo H6",
+    "bold": "Grassetto",
+    "italic": "Corsivo",
+    "underline": "Sottolineato",
+    "strike": "Barrato",
+    "subscript": "Pedice",
+    "superscript": "Apice",
+    "mark": "Evidenzia",
+    "unorderedList": "Elenco puntato",
+    "orderedList": "Elenco numerato",
+    "orderedListDecimal": "Numerazione: 1,2,3",
+    "orderedListDecimalLeadingZero": "Numerazione: 01,02,03",
+    "orderedListUpperAlpha": "Numerazione: A,B,C",
+    "orderedListLowerAlpha": "Numerazione: a,b,c",
+    "orderedListUpperRoman": "Numerazione: I,II,III",
+    "orderedListLowerRoman": "Numerazione: i,ii,iii",
+    "orderedListLowerGreek": "Numerazione: a,b,g",
+    "orderedListStart": "Imposta numero iniziale...",
+    "orderedListReversed": "Attiva/disattiva numerazione inversa",
+    "orderedListItemValue": "Imposta numero elemento...",
+    "unorderedListDisc": "Punto elenco: disc",
+    "unorderedListCircle": "Punto elenco: circle",
+    "unorderedListSquare": "Punto elenco: square",
+    "unorderedListDiamond": "Punto elenco: diamond",
+    "indent": "Aumenta rientro",
+    "outdent": "Riduci rientro",
+    "quote": "Citazione",
+    "codeBlock": "Blocco di codice",
+    "alignLeft": "Allinea a sinistra",
+    "alignCenter": "Centra",
+    "alignRight": "Allinea a destra",
+    "alignJustify": "Giustifica",
+    "hr": "Linea orizzontale",
+    "specialChars": "Caratteri speciali",
+    "clear": "Rimuovi formattazione",
+    "undo": "Annulla",
+    "redo": "Ripristina",
+    "source": "HTML",
+    "visual": "Visuale",
+    "link": "Inserisci link",
+    "unlink": "Rimuovi link",
+    "image": "Inserisci immagine",
+    "video": "Inserisci video",
+    "audio": "Inserisci audio",
+    "inlineCode": "Codice inline",
+    "table": "Inserisci tabella",
+    "addRowAbove": "Aggiungi riga sopra",
+    "addRowBelow": "Aggiungi riga sotto",
+    "deleteRow": "Rimuovi riga",
+    "addColumnLeft": "Aggiungi colonna a sinistra",
+    "addColumnRight": "Aggiungi colonna a destra",
+    "deleteColumn": "Rimuovi colonna",
+    "deleteTable": "Elimina tabella",
+    "kbd": "Tasto tastiera",
+    "abbr": "Abbreviazione",
+    "defList": "Lista definizioni",
+    "foreColor": "Colore testo",
+    "backColor": "Colore sfondo",
+    "fullscreen": "Schermo intero",
+    "fontSizeCustomPlaceholder": "...(px)",
+    "fontFamilyNoneDetected": "Nessun font rilevato"
+  },
+  "modal": {
+    "orderedListStart": {
+      "title": "Inizio elenco numerato",
+      "label": "Inizia da:"
+    },
+    "orderedListItemValue": {
+      "title": "Numero elemento",
+      "label": "Imposta numero elemento:"
+    },
+    "foreColor": {
+      "title": "Colore Testo",
+      "pick": "Scegli un colore:"
+    },
+    "backColor": {
+      "title": "Colore Sfondo",
+      "pick": "Scegli un colore:"
+    },
+    "link": {
+      "title": "Inserisci Link",
+      "url": "URL:",
+      "urlPlaceholder": "https://example.com",
+      "text": "Testo (opzionale):",
+      "textPlaceholder": "Testo del link",
+      "titlePlaceholder": "Suggerimento al passaggio del mouse",
+      "newTab": "Apri in una nuova scheda"
+    },
+    "image": {
+      "title": "Inserisci Immagine",
+      "tabRemote": "🌐 Remoto",
+      "tabLocal": "📁 Locale",
+      "url": "URL immagine:",
+      "urlPlaceholder": "https://example.com/image.jpg",
+      "alt": "Testo alternativo:",
+      "altPlaceholder": "Descrizione immagine",
+      "helpText": "Testo di aiuto:",
+      "helpTextPlaceholder": "Suggerimento al passaggio del mouse",
+      "titlePlaceholder": "Suggerimento al passaggio del mouse",
+      "width": "Larghezza massima (px, opzionale):",
+      "widthPlaceholder": "800",
+      "height": "Altezza massima (px, opzionale):",
+      "heightPlaceholder": "600",
+      "size": "Dimensione:",
+      "sizePlaceholder": "Auto",
+      "localPath": "Percorso file:",
+      "localPathPlaceholder": "images/my-image.jpg",
+      "browseTitle": "Apri libreria immagini",
+      "browseChecking": "📂 Verifica...",
+      "browseOpen": "📂 Apri libreria",
+      "browseUnavailable": "📂 Libreria non disponibile",
+      "dirLabel": "Directory",
+      "dirNotConfigured": "non configurata",
+      "statusNeedLocalDir": "Imposta <code>mediaLocalDir</code> nelle opzioni editor per abilitare la libreria locale.",
+      "statusNeedEndpoint": "Libreria non disponibile: imposta <code>mediaLibraryEndpoint</code> (oppure mantieni l'endpoint incluso nel componente per auto-resolve).",
+      "statusUnavailableHint": "Questo progetto non sta servendo l'endpoint della libreria. Puoi comunque digitare il percorso manualmente."
+    },
+    "imageLibrary": {
+      "title": "Libreria Immagini",
+      "close": "Chiudi",
+      "directory": "Directory:",
+      "folder": "Cartella:",
+      "filterPlaceholder": "Filtra immagini...",
+      "filterAria": "Filtra immagini",
+      "loadingImages": "Caricamento immagini...",
+      "loading": "Caricamento...",
+      "none": "Nessuna immagine trovata.",
+      "backTitle": "Indietro",
+      "openFolderError": "Impossibile aprire la cartella: {message}",
+      "loadItemsError": "Impossibile caricare elementi: {message}",
+      "notConfigured": "La libreria non e configurata. Imposta <code>mediaLibraryEndpoint</code> e <code>mediaLocalDir</code> nelle opzioni editor."
+    },
+    "table": {
+      "title": "Inserisci Tabella",
+      "rows": "Righe:",
+      "cols": "Colonne:",
+      "includeHeader": "Includi intestazione",
+      "headerPrefix": "Intestazione {n}"
+    },
+    "codeBlock": {
+      "title": "Blocco di Codice",
+      "language": "Linguaggio (opzionale):",
+      "languagePlaceholder": "es.: js, html, css"
+    },
+    "specialChars": {
+      "title": "Caratteri speciali",
+      "description": "Fai clic su un carattere per inserirlo nel testo.",
+      "insertCharAria": "Inserisci carattere {char}"
+    },
+    "kbd": {
+      "title": "Tasto Tastiera",
+      "key": "Tasto:"
+    },
+    "abbr": {
+      "title": "Abbreviazione",
+      "abbr": "Abbreviazione:",
+      "meaning": "Significato completo:"
+    },
+    "defList": {
+      "title": "Lista Definizioni",
+      "count": "Numero elementi:",
+      "term": "Termine {n}",
+      "def": "Definizione {n}"
+    },
+    "video": {
+      "title": "Inserisci Video",
+      "tabLocal": "📁 Locale",
+      "tabRemote": "🌐 Remoto",
+      "localPath": "Percorso file:",
+      "localPathPlaceholder": "videos/my-video.mp4",
+      "remoteUrl": "URL (YouTube, Vimeo o diretto):",
+      "remoteUrlPlaceholder": "https://www.youtube.com/watch?v=..."
+    },
+    "audio": {
+      "title": "Inserisci Audio",
+      "tabLocal": "📁 Locale",
+      "tabRemote": "🌐 Remoto",
+      "localPath": "Percorso file:",
+      "localPathPlaceholder": "audio/song.mp3",
+      "remoteUrl": "URL audio:",
+      "remoteUrlPlaceholder": "https://example.com/audio.mp3"
+    }
+  },
+  "insertDefaults": {
+    "inlineCode": "code",
+    "mark": "evidenziato",
+    "codeBlock": "code"
+  },
+  "errors": {
+    "mediaLibraryHttp": "Impossibile caricare la libreria (HTTP {status})",
+    "mediaLibraryInvalid": "Risposta non valida dalla libreria media",
+    "mediaLibraryUnauthorized": "Accesso non autorizzato alla libreria media.",
+    "mediaLibraryForbidden": "Accesso negato alla libreria media."
+  },
+  "browser": {
+    "noVideo": "Il tuo browser non supporta i video.",
+    "noAudio": "Il tuo browser non supporta l'audio."
+  }
+}
